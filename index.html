@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>豆瓣一刻</title>
+	<title>陆钰开发之豆瓣一刻</title>
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="./public/less/main.css">
-	<!-- 核心文件 -->
+	<!--核心文件-->
 	<script src="./bower_components/angular/angular.js"></script>
-	<!-- 路由模块 -->
+	<!--路由模块-->
 	<script src="./bower_components/angular-route/angular-route.js"></script>
 	<!-- 业务逻辑 -->
 	<script src="./scripts/app.js"></script>
+	<script src="./scripts/controllers.js"></script>
 </head>
+
 <body ng-app="Yike">
 	<div class="viewport">
 		<!-- 侧边导航 -->
-		<div class="navs" ng-controller="NavsCtrl">
+		<div ng-class="{navs:true,collapse:collapsed}" ng-controller="NavsCtrl">
 			<dl>
 				<dt class="login">
 					<div class="avatar">
@@ -24,7 +27,7 @@
 					</div>
 					<span>登录</span>
 				</dt>
-				<dd class="active" ng-repeat="nav in navs">
+				<dd class="active" ng-click="toggle()" ng-repeat="nav in navs">
 					<a href="{{nav.link}}" class="{{nav.icon}}">
 						<span>{{nav.text}}</span>
 					</a>
@@ -37,18 +40,18 @@
 		</div>
 		<div class="container">
 			<!-- 头部 -->
-			<div class="header">
-				<a href="javascript:;" class="menu icon-menu"></a>
+			<div ng-class="{header:true,collapse:collapsed}">
+				<!--这里a标签是左侧导航按钮-->
+				<a href="javascript:;" ng-click="toggle()" class="menu icon-menu"></a>
 				<h2>今日一刻</h2>
 				<a href="javascript:;" class="search icon-search"></a>
 			</div>
 			<!-- 主体 -->
-			<div class="body">
-				<!--  -->
+			<div ng-class="{body: true, collapse: collapsed}">
 				<div ng-view></div>
 			</div>
 		</div>
 	</div>
-	<script src="./public/libs/toggle.js"></script>
 </body>
+
 </html>
