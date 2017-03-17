@@ -3,7 +3,8 @@
 AngularJS开发“豆瓣一刻”
 
 侧导航：
-http://p1.bpimg.com/4851/b3374892df2fd5a3.png
+![](http://p1.bpimg.com/4851/b3374892df2fd5a3.png)
+
 
 
 主页:
